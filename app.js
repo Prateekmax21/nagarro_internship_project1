@@ -17,15 +17,24 @@ const io = socketio(server);
 const Chat = require('./models/chat')
 
 
+const DB = "mongodb+srv://max:123qwe@cluster0.l7nvfri.mongodb.net/twitter?retryWrites=true&w=majority"
 
 
-mongoose.connect('mongodb://localhost:27017/twitter')
+mongoose.connect(DB)
 .then(()=>{
     console.log("db connected");
 })
 .catch((err)=>{
     console.log(err);
 })
+
+// mongoose.connect('mongodb://localhost:27017/twitter')
+// .then(()=>{
+//     console.log("db connected");
+// })
+// .catch((err)=>{
+//     console.log(err);
+// })
 
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "/views"));
