@@ -28,13 +28,7 @@ mongoose.connect(DB)
 })
 
 
-// mongoose.connect('mongodb://localhost:27017/twitter')
-// .then(()=>{
-//     console.log("db connected");
-// })
-// .catch((err)=>{
-//     console.log(err);
-// })
+
 
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "/views"));
@@ -109,6 +103,6 @@ io.on("connection",(socket)=>{
 
 
 
-server.listen(3000, () => {
-  console.log("Server running at port 3000");
+server.listen(process.env.PORT , () => {
+  console.log("Server running successfully");
 });
